@@ -4,12 +4,15 @@ img.circle{
 }
 
 div.person{
+    padding: 15px;
+}
+
+.left{
     float:left;
 }
 
-div.left{
-    float:left;
-    margin-left: 50px;
+.right{
+    float:right;
 }
 
 .clear{
