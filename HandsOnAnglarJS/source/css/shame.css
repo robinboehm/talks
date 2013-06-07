@@ -1,0 +1,21 @@
+img.circle{
+    width: 100px;
+    border-radius: 50%;
+}
+
+div.person{
+    float:left;
+}
+
+div.left{
+    float:left;
+    margin-left: 50px;
+}
+
+.clear{
+    clear: both;
+}
+
+.center{
+    text-align: center;
+}
