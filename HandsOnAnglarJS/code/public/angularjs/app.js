@@ -1,33 +1,12 @@
 'use strict';
 
-var todomvc = angular.module('todomvc', ['ngResource']);
+var app = angular.module('todomvc', ['ngResource']);
 
-todomvc.factory('todoStorage', function () {
-  var STORAGE_ID = 'todos-angularjs';
-
-  return {
-    get: function () {
-      return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
-    },
-
-    put: function (todos) {
-      localStorage.setItem(STORAGE_ID, JSON.stringify(todos));
-    }
-  };
-});
-
-
-
-todomvc.factory('Todo', function($resource) {
+app.factory('Todo', function($resource) {
   return $resource('/todos/:id', { id: '@id' }, {update: {method: 'PUT' }})
 });
 
-/**
- * The main controller for the app. The controller:
- * - retrieves and persists the model via the todoStorage service
- * - exposes the model to the template and provides event handlers
- */
-todomvc.controller('TodoCtrl', function($scope, $location, todoStorage, filterFilter, Todo) {
+app.controller('TodoCtrl', function($scope, $location, filterFilter, Todo) {
   var todos = $scope.todos = Todo.query();
 
   $scope.newTodo = '';
@@ -37,7 +16,6 @@ todomvc.controller('TodoCtrl', function($scope, $location, todoStorage, filterFi
     $scope.remainingCount = filterFilter(todos, { completed: false }).length;
     $scope.completedCount = todos.length - $scope.remainingCount;
     $scope.allChecked = !$scope.remainingCount;
-    todoStorage.put(todos);
   }, true);
 
   if ($location.path() === '') {
@@ -57,12 +35,8 @@ todomvc.controller('TodoCtrl', function($scope, $location, todoStorage, filterFi
     if (!newTodo.length) {
       return;
     }
-
-    todos.push({
-      title: newTodo,
-      completed: false
-    });
-
+    todos.push({ title: newTodo, completed: false });
+    Todo.save({ title: newTodo, completed: false });
     $scope.newTodo = '';
   };
 
@@ -76,11 +50,18 @@ todomvc.controller('TodoCtrl', function($scope, $location, todoStorage, filterFi
 
     if (!todo.title) {
       $scope.removeTodo(todo);
+    } else {
+      Todo.save(todo);
     }
   };
 
+  $scope.updateTodo = function (todo) {
+
+  }
+
   $scope.removeTodo = function (todo) {
     todos.splice(todos.indexOf(todo), 1);
+    Todo.delete(todo);
   };
 
   $scope.clearCompletedTodos = function () {
