@@ -18,8 +18,6 @@ title: Hands on AngularJS
 
 <section>
   <h2>Agenda</h2>
-
-
   <ul>
     <li>About us</li>
     <li>Quick Start</li>
@@ -28,9 +26,9 @@ title: Hands on AngularJS
     <li>Overview</li>
   </ul>
 </section>
+
 <section>
   <h2>About us</h2>
-
 
   <div class="left">
     <img src="images/robin_boehm.png" class="circle"/>
@@ -71,6 +69,81 @@ title: Hands on AngularJS
   <div class="clear"></div>
 
 </section>
+
+
+<section>
+  <h2>Poll</h2>
+  <div style="margin-bottom:60px">How many of you...</div>
+  <p>
+    ...already used AngularJS?
+    <input ng-model="used" type="number" style="border-radius:10px;height:30px"/>
+  </p>
+
+  <p>
+    ...know AngularJS?
+    <input ng-model="know" type="number" style="border-radius:10px;height:30px"/>
+  </p>
+
+  <p>
+    ...never heard about AngularJS?
+    <input ng-model="never_heard" type="number" style="border-radius:10px;height:30px"/>
+  </p>
+
+  <style>
+  .poll  { transition: 1s all; position: absolute; bottom: 0; width: 50px; }
+  .poll span { position: relative; top: -40px; display: block; }
+  .poll1 { background-color: #ff0000; right: 0;   }
+  .poll2 { background-color: #00ff00; right: 50px; }
+  .poll3 { background-color: #0000ff; right: 100px; }
+  </style>
+
+  <div ng-init="used=0;know=0;never_heard=0">
+    Sum: {{used + know + never_heard}}
+
+      <div class="poll poll1" style="height: {{used / (used + know + never_heard) * 200}}px;">
+        <span ng-show="used">{{used}}</span>
+      </div>
+      <div class="poll poll2" style="height: {{know / (used + know + never_heard) * 200}}px;">
+        <span ng-show="know">{{know}}</span>
+      </div>
+      <div class="poll poll3" style="height: {{never_heard / (used + know + never_heard) * 200}}px;">
+        <span ng-show="never_heard">{{never_heard}}</span>
+      </div>
+  </div>
+
+</section>
+
+
+
+
+<section>
+  <h2>History</h2>
+  <div class="left">
+    <p>2009</p>
+    <img src="images/misko_hevery.jpg" class="circle"/>
+    <p><strong>Miško Hevery</strong></p>
+  </div>
+
+  <div class="right">
+      <img src="images/angularjs-logo-2009.png"/>
+  </div>
+</section>
+
+
+<section>
+  <h2>Overview</h2>
+  <img src="images/google-feedback.png"/>
+</section>
+
+<section>
+  <h2>Hands on!</h2>
+</section>
+
+<section>
+  <h2>Overview</h2>
+  <img src="images/overview.svg"/>
+</section>
+
 <section>
   <h2>About us - Angularjs.de</h2>
 
@@ -100,74 +173,32 @@ title: Hands on AngularJS
     </div>
 
   </div>
-              <div class="clear"></div>
+    <div class="clear"></div>
 
-              <p></p>
+    <p></p>
 
-              <div class="left">
-              <ul>
-                  <li>
-                      book
-                  </li>
-                  <li>
-                      article
-                  </li>
-                  <li>
-                      developer directory
-                  </li>
-                  <li>
-                      Twitter <a href="http://twitter.com/angularjs_de">@angularjs_de</a>
-                  </li>
-                  <li>
-                      Google+ & Facebook <strong>AngularJS Deutschland</strong>
-                  </li>
-              </ul>
-              </div>
+    <div class="left">
+    <ul>
+        <li>
+            book
+        </li>
+        <li>
+            articles
+        </li>
+        <li>
+            developer directory
+        </li>
+        <li>
+            Twitter <a href="http://twitter.com/angularjs_de">@angularjs_de</a>
+        </li>
+        <li>
+            Google+ & Facebook <strong>AngularJS Deutschland</strong>
+        </li>
+    </ul>
+    </div>
 
-              <div class="clear"></div>
-
+    <div class="clear"></div>
 </section>
-<section>
-
-
-<h2>Poll</h2>
-<div style="margin-bottom:60px">How many of you...</div>
-<p>
-    ...already used AngularJS?
-    <input ng-model="used" type="number" style="border-radius:10px;height:30px"/>
-</p>
-
-<p>
-    ...know AngularJS?
-    <input ng-model="know" type="number" style="border-radius:10px;height:30px"/>
-</p>
-
-<p>
-    ...never heard about AngularJS?
-    <input ng-model="never_heard" type="number" style="border-radius:10px;height:30px"/>
-</p>
-
-<div ng-init="used=0;know=0;never_heard=0">
-{{used}}
-{{know}}
-{{never_heard}}
-Sum: {{used + know + never_heard}}
-</div>
-
-</section>
-
-
-
-
-<section>
-<h2>History</h2>
-</section>
-
-
-<section>
-<h2>Hands on!</h2>
-</section>
-
 
 <section>
   <h1>Thanks!</h1>
