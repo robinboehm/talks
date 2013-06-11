@@ -2,9 +2,6 @@
 title: Hands on AngularJS
 ---
 
-
-<%= partial 'slide1' %>
-
 <section>
   <h1>Hands on AngularJS</h1>
   <h3> by
@@ -130,9 +127,46 @@ title: Hands on AngularJS
               <div class="clear"></div>
 
 </section>
-<section></section>
-<section></section>
+<section>
 
+
+<h2>Poll</h2>
+<div style="margin-bottom:60px">How many of you...</div>
+<p>
+    ...already used AngularJS?
+    <input ng-model="used" type="number" style="border-radius:10px;height:30px"/>
+</p>
+
+<p>
+    ...know AngularJS?
+    <input ng-model="know" type="number" style="border-radius:10px;height:30px"/>
+</p>
+
+<p>
+    ...never heard about AngularJS?
+    <input ng-model="never_heard" type="number" style="border-radius:10px;height:30px"/>
+</p>
+
+<div ng-init="used=0;know=0;never_heard=0">
+{{used}}
+{{know}}
+{{never_heard}}
+Sum: {{used + know + never_heard}}
+</div>
+
+</section>
+
+
+
+
+<section>
+<h2>History</h2>
+</section>
+
+
+<section>
+<h2>Hands on!</h2>
+</section>
 
 
 <section>
