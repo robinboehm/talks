@@ -18,8 +18,6 @@ title: Hands on AngularJS
 
 <section>
   <h2>Agenda</h2>
-
-
   <ul>
     <li>About us</li>
     <li>Quick Start</li>
@@ -28,9 +26,9 @@ title: Hands on AngularJS
     <li>Overview</li>
   </ul>
 </section>
+
 <section>
   <h2>About us</h2>
-
 
   <div class="left">
     <img src="images/robin_boehm.png" class="circle"/>
@@ -101,11 +99,22 @@ title: Hands on AngularJS
 
 
 
-  <div class="right" style="border-radius:50%;height:300px;width:300px;background-color: red"></div>
+  <div class="right">
+
+        <div class="poll poll1" style="height: {{used / (used + know + never_heard) * 5}}em;">
+          <span ng-show="used">{{used}}</span>
+        </div>
+        <div class="poll poll2" style="height: {{know / (used + know + never_heard) * 5}}em;">
+          <span ng-show="know">{{know}}</span>
+        </div>
+        <div class="poll poll3" style="height: {{never_heard / (used + know + never_heard) * 5}}em;">
+          <span ng-show="never_heard">{{never_heard}}</span>
+        </div>
+  </div>
 
   <div class="clear"></div>
 
-<div ng-init="used=0;know=0;never_heard=0">
+<div>
 Sum: {{used + know + never_heard}}
 </div>
 
@@ -118,12 +127,16 @@ Sum: {{used + know + never_heard}}
   <h2>Simple</h2>
 
   <pre>
-    <code contenteditable>
+    <code>
       &lt;section ng-init="used=0;know=0;never_heard=0"&gt;
         &lt;input ng-model="used"/&gt;
         &lt;input ng-model="know"/&gt;
         &lt;input ng-model="never_heard"/&gt;
         Sum: {{used + know + never_heard}&shy;}
+
+      &lt;div class="poll poll1"
+              style="height: {{used / (used + know + never_heard) * 5}&shy;}em;"&gt;
+
       &lt;/section&gt;
 
     </code>
@@ -131,11 +144,32 @@ Sum: {{used + know + never_heard}}
 
 </section>
 
-
-
+<section>
+  <h2>The Father</h2>
+    <p>2009</p>
+    <img src="images/misko_hevery.jpg" class="circle"/>
+    <p><strong>Miško Hevery</strong></p>
+    <img src="images/angularjs-logo-2009.png"/>
+    <p>Google 20% project</p>
+</section>
 
 <section>
-<h2>History</h2>
+  <h2>Beginnings</h2>
+  <img src="images/google-feedback.png"/>
+</section>
+
+<section>
+  <h2>Principles</h2>
+  <img src="images/principles.png"/>
+</section>
+
+<section>
+  <h2>Hands on!</h2>
+</section>
+
+<section>
+  <h2>Overview</h2>
+  <img src="images/overview.svg"/>
 </section>
 
 
@@ -147,6 +181,7 @@ Sum: {{used + know + never_heard}}
 <section>
   <h1>Thanks!</h1>
 </section>
+
 
 <section>
   <h2>About us - Angularjs.de</h2>
@@ -177,30 +212,33 @@ Sum: {{used + know + never_heard}}
     </div>
 
   </div>
-              <div class="clear"></div>
+    <div class="clear"></div>
 
-              <p></p>
+    <p></p>
 
-              <div class="left">
-              <ul>
-                  <li>
-                      book
-                  </li>
-                  <li>
-                      article
-                  </li>
-                  <li>
-                      developer directory
-                  </li>
-                  <li>
-                      Twitter <a href="http://twitter.com/angularjs_de">@angularjs_de</a>
-                  </li>
-                  <li>
-                      Google+ & Facebook <strong>AngularJS Deutschland</strong>
-                  </li>
-              </ul>
-              </div>
+    <div class="left">
+    <ul>
+        <li>
+            book
+        </li>
+        <li>
+            articles
+        </li>
+        <li>
+            developer directory
+        </li>
+        <li>
+            Twitter <a href="http://twitter.com/angularjs_de">@angularjs_de</a>
+        </li>
+        <li>
+            Google+ & Facebook <strong>AngularJS Deutschland</strong>
+        </li>
+    </ul>
+    </div>
 
-              <div class="clear"></div>
+    <div class="clear"></div>
+</section>
 
+<section>
+  <h1>Thanks!</h1>
 </section>
