@@ -1,4 +1,4 @@
-<section ng-init="used=0;know=0;never_heard=0">
+<section>
   <h2>Quick-Start</h2>
 
   <div style="margin-bottom:60px">How many of you ... AngularJS</div>
@@ -48,16 +48,15 @@
 
   <pre>
     <code>
-  &lt;section ng-init="used=0;know=0;never_heard=0"&gt;
-    &lt;input ng-model="used"&gt;
-    &lt;input ng-model="know"&gt;
-    &lt;input ng-model="never_heard"&gt;
-    Sum: {{used + know + never_heard}&shy;}
+  &lt;input ng-model="used"&gt;
+  &lt;input ng-model="know"&gt;
+  &lt;input ng-model="never_heard"&gt;
 
-    &lt;div class="poll poll1"
-         style="height: {{used / (used + know + never_heard) * 5}&shy;}em;"&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
+  Sum: {{used + know + never_heard}&shy;}
+
+  &lt;div class="poll poll1"
+       style="height: {{used / (used + know + never_heard) * 5}&shy;}em;"&gt;
+  &lt;/div&gt;
     </code>
    </pre>
 
