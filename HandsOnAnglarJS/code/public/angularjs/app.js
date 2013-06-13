@@ -3,30 +3,19 @@
 var app = angular.module('todomvc', ['ngResource']);
 
 app.factory('ToDoService', function ($resource) {
-    return $resource('/todos/:id', { id:'@id' }, {update:{method:'PUT' }})
+    return $resource('/todos/:id', { id:'@id' }, { update:{method:'PUT' }})
 });
 
-app.controller('TodoCtrl', ['$scope','filterFilter','ToDoService'
-                ,function ($scope, filterFilter, ToDoService) {
+app.controller('TodoCtrl', function ($scope, filterFilter, ToDoService) {
     var todos = $scope.todos = ToDoService.query();
 
-    $scope.newTodo = '';
-    $scope.editedTodo = null;
-
-
-    $scope.addTodo = function (newTodo) {
+    $scope.createTodo = function (newTodo) {
         if (!newTodo.length) {
             return;
         }
-
-        var todo = {
-            title:newTodo.trim(),
-            completed:false
-        };
+        var todo = { title:newTodo.trim(), completed:false };
         todos.push(todo);
-        ToDoService.save(todo)
-            .then();
-
+        ToDoService.save(todo);
         $scope.newTodo = '';
     };
 
@@ -34,13 +23,8 @@ app.controller('TodoCtrl', ['$scope','filterFilter','ToDoService'
         $scope.editedTodo = todo;
     };
 
-    $scope.doneEditing = function (todo) {
-        $scope.editedTodo = null;
-        $scope.updateTodo(todo);
-
-    };
-
     $scope.updateTodo = function (todo) {
+        $scope.editedTodo = null;
         if (!todo.title) {
             $scope.removeTodo(todo);
         } else {
