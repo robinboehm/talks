@@ -12,8 +12,8 @@ app.controller('TodoCtrl', function ($scope, ToDoService) {
 
         var todo = { title: newTodo.trim(), completed: false };
         ToDoService.save(todo)
-            .then(function (todo) {
-                todos.push(todo);
+            .$then(function (response) {
+                todos.push(response.data);
             });
         $scope.newTodo = '';
     };
