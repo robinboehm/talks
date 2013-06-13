@@ -6,7 +6,7 @@ app.factory('ToDoService', function ($resource) {
     return $resource('/todos/:id', { id:'@id' }, { update:{method:'PUT' }})
 });
 
-app.controller('TodoCtrl', function ($scope, filterFilter, ToDoService) {
+app.controller('TodoCtrl', function ($scope, ToDoService) {
     var todos = $scope.todos = ToDoService.query();
 
     $scope.createTodo = function (newTodo) {

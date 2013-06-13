@@ -18,7 +18,7 @@
 
 		<section id="main" ng-show="todos.length" class="ng-cloak">
 			<ul id="todo-list">
-				<li ng-repeat="todo in todos | filter:statusFilter"
+				<li ng-repeat="todo in todos"
                       ng-class="{completed: todo.completed, editing: todo == editedTodo}">
 					<div class="view">
 						<input class="toggle" type="checkbox" ng-model="todo.completed" ng-click="updateTodo(todo)">
