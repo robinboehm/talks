@@ -8,16 +8,21 @@ app.factory('ToDoService', function ($resource) {
 });
 
 app.controller('TodoCtrl', function ($scope, ToDoService) {
+    // Fetch the initial list from the server
     var todos = $scope.todos = ToDoService.query();
 
     $scope.createTodo = function (newTodo) {
         if (!newTodo.length) { return };
 
+        // Create simple model for the backend
         var todo = { title: newTodo.trim(), completed: false };
+
+        // Save model to the backend
         ToDoService.save(todo)
             .$then(function (response) {
                 todos.push(response.data);
             });
+        // Clear the ViewModel
         $scope.newTodo = '';
     };
 
