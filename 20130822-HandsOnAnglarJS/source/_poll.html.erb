@@ -1,0 +1,63 @@
+<section>
+  <h2>Quick-Start</h2>
+
+  <div style="margin-bottom:60px">How many of you ... AngularJS</div>
+
+  <div class="left">
+    <div class="left">
+      <input type="number" ng-model="used">
+      <span style="vertical-align: middle;">already use</span>
+    </div>
+    <div class="clear"></div>
+
+    <div class="left">
+      <input ng-model="know" type="number">
+      <span style="vertical-align: middle;">know</span>
+    </div>
+    <div class="clear"></div>
+
+    <div class="left">
+      <input ng-model="never_heard" type="number">
+      <span style="vertical-align: middle;">never heard about</span>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="poll poll1" style="height: {{used / (used + know + never_heard) * 5}}em;">
+      <span ng-show="used">{{used}}</span>
+    </div>
+    <div class="poll poll2" style="height: {{know / (used + know + never_heard) * 5}}em;">
+      <span ng-show="know">{{know}}</span>
+    </div>
+    <div class="poll poll3" style="height: {{never_heard / (used + know + never_heard) * 5}}em;">
+      <span ng-show="never_heard">{{never_heard}}</span>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="left">
+    <br>
+    <p ng-show="used + know + never_heard">Sum: {{used + know + never_heard}}</p>
+  </div>
+</section>
+
+
+<section>
+  <h2>Simple</h2>
+
+  <pre>
+    <code>
+  &lt;input ng-model="used"&gt;
+  &lt;input ng-model="know"&gt;
+  &lt;input ng-model="never_heard"&gt;
+
+  Sum: {{used + know + never_heard}&shy;}
+
+  &lt;div class="poll poll1"
+       style="height: {{used / (used + know + never_heard) * 5}&shy;}em;"&gt;
+  &lt;/div&gt;
+    </code>
+   </pre>
+
+</section>
