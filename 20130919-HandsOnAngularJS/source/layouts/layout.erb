@@ -31,9 +31,22 @@
     <script>
         var controller = new Leap.Controller({enableGestures: true});
 
+
+        var circleCondition = false;
+        controller.on('frame', function(frame){
+           if(frame.hands.length===2){
+               circleCondition = true;
+           }
+            else{
+               circleCondition = false;
+           }
+        });
         controller.on('gesture', function (gesture){
-            if(gesture.type === 'swipe'){
+            if(!circleCondition && gesture.type === 'swipe'){
                 handleSwipe(gesture);
+            }
+            if(circleCondition && gesture.type === 'circle'){
+               handleCircle(gesture);
             }
         });
 
@@ -45,12 +58,20 @@
                 }else{
                     Reveal.right();
                 }
-                timeOutSwipe(1000);
+                timeOut(650);
+            }
+        }
+
+        function handleCircle (circle){
+            var startFrameID;
+            if(!timeoutActive && circle.state === 'stop'){
+                Reveal.toggleOverview();
+                timeOut(1000);
             }
         }
 
         var timeoutActive = false;
-        function timeOutSwipe(ms){
+        function timeOut(ms){
             timeoutActive = true;
             setTimeout(function(){
                 timeoutActive = false;
