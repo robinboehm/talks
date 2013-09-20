@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="leap">
 <head>
   <meta charset="utf-8">
 
@@ -25,71 +25,38 @@
   <script src="lib/js/html5shiv.js"></script>
   <![endif]-->
 
-
-    <!-- TODO: Add Leap Source to the local files -->
-    <script src="//js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
-    <script>
-        var controller = new Leap.Controller({enableGestures: true});
-
-
-        var circleCondition = false;
-        controller.on('frame', function(frame){
-           if(frame.hands.length===2){
-               circleCondition = true;
-           }
-            else{
-               circleCondition = false;
-           }
-        });
-        controller.on('gesture', function (gesture){
-            if(!circleCondition && gesture.type === 'swipe'){
-                handleSwipe(gesture);
-            }
-            if(circleCondition && gesture.type === 'circle'){
-               handleCircle(gesture);
-            }
-        });
-
-        function handleSwipe (swipe){
-            var startFrameID;
-            if(!timeoutActive && swipe.state === 'stop'){
-                if (swipe.direction[0] > 0){
-                    Reveal.left();
-                }else{
-                    Reveal.right();
-                }
-                timeOut(650);
-            }
-        }
-
-        function handleCircle (circle){
-            var startFrameID;
-            if(!timeoutActive && circle.state === 'stop'){
-                Reveal.toggleOverview();
-                timeOut(1000);
-            }
-        }
-
-        var timeoutActive = false;
-        function timeOut(ms){
-            timeoutActive = true;
-            setTimeout(function(){
-                timeoutActive = false;
-            },ms)
-
-        }
-
-        controller.connect();
-    </script>
 </head>
 <body>
   <div class="reveal">
-    <div class="slides">
+      <h1 ng-bind="header"></h1>
+      <style>
+          div.headline{
+              position: absolute;
+              top: 0;
+              opacity: 0.7;
+              font-size: 0.5em;
+          }
+
+          div.headline.left{
+              left:1em;
+          }
+          div.headline.right{
+              right:1em;
+          }
+      </style>
+      <div class="headline right">@roobijn</div>
+      <div class="headline left">Robin B&ouml;hm</div>
+    <div class="slides" leapSwipeLeft="header='leap'">
       <%= yield %>
   </div>
   </div>
 
-  <%= javascript_include_tag "angular.min.js", "/lib/js/head.min.js", "reveal.min.js" %>
+  <%= javascript_include_tag "angular.min.js",
+                             "/lib/js/head.min.js",
+                             "reveal.min.js",
+                             "angular-leap.js",
+                             "leap.min.js",
+                             "shameleap.js" %>
 
   <script>
     // Full list of configuration options available here:

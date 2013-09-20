@@ -5,7 +5,7 @@ title: Hands on AngularJS
 <section>
   <h1>Hands on AngularJS</h1>
   <h3> by
-    <a href="https://twitter.com/roobijn" target="_blank">@roobijn</a>
+    <div><a href="https://twitter.com/roobijn" target="_blank">@roobijn</a></div>
   </h3>
 
   <aside class="notes">
@@ -19,28 +19,12 @@ title: Hands on AngularJS
     <li>About Me</li>
     <li>Quickstart</li>
     <li>About Angular</li>
-    <li>Hands on</li>
+    <li>Show some stuff</li>
     <li>Overview</li>
   </ul>
 </section>
 
-<section>
-  <h2>About Me</h2>
-
-    <img src="images/robin_boehm.png" class="circle"/>
-    <p>
-      <strong>Robin Böhm</strong>
-      <p><a href="https://twitter.com/roobijn" target="_blank">@roobijn</a></p>
-    </p>
-    <ul>
-      <li>software engineer</li>
-      <li>coach & consultant</li>
-      <li>author at
-        <a href="https://twitter.com/dpunkt_verlag" target="_blank">@dpunkt_verlag</a>
-      </li>
-    </ul>
-
-</section>
+<%= partial 'about_robin' %>
 
 
 <%= partial 'aboutangularjsde' %>
@@ -50,17 +34,13 @@ title: Hands on AngularJS
   <h2>AngularJS?</h2>
 </section>
 
-<section>
-  <h2>Trend comparison</h2>
-  <img src="images/trend-comparison.png"/>
-  <p><a href="http://www.google.de/trends/explore#q=angularjs%20%2B%20angular.js%2C%20emberjs%20%2B%20ember.js%2C%20backbonejs%20%2B%20backbone.js%2C%20knockoutjs%20%2B%20knockout.jsr&cmpt=q" target="_blank">Google Trends</a></p>
-</section>
+<%= partial 'trend_comparison' %>
 
 <section>
-  <h2>A Hype? Why?</h2>
-  <p>
-    Let's take a look...
-  </p>
+    <h2>A Hype? Why?</h2>
+    <p>
+        Let's take a look...
+    </p>
 </section>
 
 <%= partial 'poll' %>
@@ -71,17 +51,12 @@ title: Hands on AngularJS
 
 <%= partial 'directives' %>
 
-<section>
-  <h2>Hands on!</h2>
-</section>
+<%= partial 'directives2leap' %>
 
 <section>
-  <h2>Overview</h2>
-  <img src="images/overview.svg"/>
-</section>
-
-<%= partial 'aboutangularjsde' %>
-
-<section>
-  <h1>Thanks!</h1>
+    <h1>Thanks!</h1>
+    <img src="images/robin_boehm.png" class="circle"/>
+    <p>
+        <strong>Robin Böhm</strong>
+    <p><a href="https://twitter.com/roobijn" target="_blank">@roobijn</a></p>
 </section>

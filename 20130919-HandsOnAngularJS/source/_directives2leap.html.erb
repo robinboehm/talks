@@ -1,0 +1,132 @@
+<section>
+  <h2>Creating own directives</h2>
+</section>
+
+<section>
+    <h2>Doing some cool stuff...</h2>
+</section>
+
+<section>
+    <section>
+        <h2>Leap Motion</h2>
+    </section>
+
+    <section>
+        <h2>Leap Motion</h2>
+        <img src="images/leap-box.jpg"/>
+    </section>
+
+    <section>
+        <h2>Leap Motion</h2>
+        <img src="images/leap-motion-1.jpg"/>
+    </section>
+
+
+    <section>
+        <h2>Leap Motion</h2>
+        <img src="images/leap-hands.jpg"/>
+    </section>
+
+    <section>
+        <h2>Leap Motion</h2>
+        <img src="images/leap-motion-game.png"/>
+    </section>
+
+    <section>
+        Maybe...
+    </section>
+
+    <section>
+        Control my slides..
+    </section>
+
+    <section>
+        <a href="http://js.leapmotion.com/">LeapJS API</a>
+    </section>
+</section>
+
+<section>
+    <img src="images/w00t.jpg"/>
+</section>
+
+<section>
+    <h2>Angular + Leap</h2>
+</section>
+
+<section>
+    <h2>Directives</h2>
+    <ul>
+        <li>Easy to use</li>
+        <li>Reusable</li>
+        <li>...</li>
+    </ul>
+</section>
+
+<section>
+    <h3>leap-swipe-left="slideleft()"</h3>
+</section>
+
+<section>
+    <h3>leap-screen-tap="used=used+1"</h3>
+</section>
+
+<section>
+    <h2>Directives</h2>
+    <pre ng-non-bindable>
+        <code>
+<input type="number" ng-model="used" leap-screen-tap="used=used+1">
+        </code>
+    </pre>
+</section>
+
+
+<section ng-controller="newScope" ng-init="used=0;know=0;never_heard=0">
+    <h2>Quick-Start</h2>
+
+    <div style="margin-bottom:60px">How many of you ... AngularJS</div>
+
+    <div class="left">
+        <div class="left">
+            <input type="number" ng-model="used" leap-screen-tap="used=used+1">
+            <span style="vertical-align: middle;">already use</span>
+        </div>
+        <div class="clear"></div>
+
+        <div class="left">
+            <input ng-model="know" type="number">
+            <span style="vertical-align: middle;">know</span>
+        </div>
+        <div class="clear"></div>
+
+        <div class="left">
+            <input ng-model="never_heard" type="number">
+            <span style="vertical-align: middle;">never heard about</span>
+        </div>
+    </div>
+
+    <div class="right">
+        <div id="p1" class="poll poll1" style="height: {{used / (used + know + never_heard) * 5}}em;">
+            <span ng-show="used">{{used}}</span>
+        </div>
+        <div class="poll poll2" style="height: {{know / (used + know + never_heard) * 5}}em;">
+            <span ng-show="know">{{know}}</span>
+        </div>
+        <div class="poll poll3" style="height: {{never_heard / (used + know + never_heard) * 5}}em;">
+            <span ng-show="never_heard">{{never_heard}}</span>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="left">
+        <br>
+        <p ng-show="used + know + never_heard">Sum: {{used + know + never_heard}}</p>
+    </div>
+</section>
+
+
+<section>
+    <h2>Angular Leap at GitHub</h2>
+    <img src="images/angular-leap-github.png"/>
+    <a href="https://github.com/angular-leap?tab=members">https://github.com/angular-leap?tab=members</a>
+</section>

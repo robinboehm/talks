@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="scopes" ng-controller="AppCtrl">
+<head ng-controller="HeadCtrl">
+    <title>{{ selectedFramework.name }}</title>
+    <link rel="stylesheet" href="css/shame.css"/>
+</head>
+<body>
+<aside>
+    <nav ng-controller="ListCtrl">
+        <ul>
+            <li ng-repeat="framework in frameworks" ng-click="handleClick(framework)">{{ framework.name }}</li>
+        </ul>
+    </nav>
+</aside>
+
+<article ng-controller="DetailsCtrl">
+    <h1>{{ selectedFramework.name }}</h1>
+    <input type="text" ng-model="selectedFramework.name"/>
+
+</article>
+
+<footer ng-controller="FooterCtrl">
+    <ul>
+        <li ng-repeat="tag in selectedFramework.tags">{{ tag }}</li>
+    </ul>
+
+</footer>
+
+<script src="lib/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
