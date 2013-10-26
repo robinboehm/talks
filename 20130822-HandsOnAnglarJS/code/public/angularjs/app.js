@@ -26,6 +26,7 @@ app.controller('TodoCtrl', function ($scope, ToDoService) {
         $scope.newTodo = '';
     };
 
+
     $scope.editTodo = function (todo) {
         $scope.editedTodo = todo;
     };

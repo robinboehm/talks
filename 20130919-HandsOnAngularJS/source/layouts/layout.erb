@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="leap">
+<html ng-app="angular-leap">
 <head>
   <meta charset="utf-8">
 
@@ -29,21 +29,6 @@
 <body>
   <div class="reveal">
       <h1 ng-bind="header"></h1>
-      <style>
-          div.headline{
-              position: absolute;
-              top: 0;
-              opacity: 0.7;
-              font-size: 0.5em;
-          }
-
-          div.headline.left{
-              left:1em;
-          }
-          div.headline.right{
-              right:1em;
-          }
-      </style>
       <div class="headline right">@roobijn</div>
       <div class="headline left">Robin B&ouml;hm</div>
     <div class="slides" leapSwipeLeft="header='leap'">
@@ -56,7 +41,8 @@
                              "reveal.min.js",
                              "angular-leap.js",
                              "leap.min.js",
-                             "shameleap.js" %>
+                             "angular-leap.js",
+                             "newScope.js" %>
 
   <script>
     // Full list of configuration options available here:
