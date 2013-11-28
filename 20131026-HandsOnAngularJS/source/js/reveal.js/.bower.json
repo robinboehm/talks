@@ -9,6 +9,6 @@
     "commit": "4164200474e2af27803dc7683054f5443743c8a9"
   },
   "_source": "git://github.com/hakimel/reveal.js.git",
-  "_target": "2.5.0",
+  "_target": "~2.5.0",
   "_originalSource": "reveal.js"
 }

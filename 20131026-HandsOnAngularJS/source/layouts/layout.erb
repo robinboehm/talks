@@ -1,5 +1,20 @@
 <!doctype html>
 <html ng-app="rboehmAngularSlides">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <head>
   <meta charset="utf-8">
 
@@ -47,10 +62,22 @@
     <div class="slides">
         <%= yield %>
     </div>
+
+
+
+
+
+
+
     <div class="headline right">
         <a href="https://twitter.com/roobijn" target="_blank">
             @roobijn
         </a>
+    </div>
+    <div class="bottomline left">
+        <div>
+            Current Viewers:<span ng-bind="userCount"></span>
+        </div>
     </div>
     <div class="headline left">Robin B&ouml;hm</div>
 </div>
@@ -82,7 +109,12 @@
                              "leapjs/leap.min.js",
                              "/lib/js/head.min.js",
                              "reveal.js/js/reveal.min.js",
-                             "shame.js" %>
+                             "module.js",
+                             "revealConfig.js",
+                             "syncSlide.js",
+                             "syncScope.js",
+                             "viewers.js"
+  %>
 
   <script>
     // Full list of configuration options available here:

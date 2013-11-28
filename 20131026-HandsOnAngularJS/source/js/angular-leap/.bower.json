@@ -31,6 +31,6 @@
     "commit": "0421977929f0cee78cae4cfc2f14901dfba40f1e"
   },
   "_source": "git://github.com/robinboehm/angular-leap.git",
-  "_target": "0.0.1",
+  "_target": "~0.0.1",
   "_originalSource": "angular-leap"
 }
