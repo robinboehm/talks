@@ -1,0 +1,148 @@
+<section>
+  <h2>Directives</h2>
+
+  <ul>
+    <li>Extend HTML</li>
+    <li>Tags and attributes</li>
+    <li>Reusable components</li>
+  </ul>
+</section>
+
+
+<section>
+    <h2>Directive examples</h2>
+</section>
+
+<section>
+  <h2>Directive examples</h2>
+  <div>
+      <pre>
+          <code ng-non-bindable>
+              <div>0</div>
+          </code>
+      </pre>
+      <div>
+          0
+      </div>
+  </div>
+</section>
+
+<section>
+    <h2>Directive examples</h2>
+    <div>
+      <pre>
+          <code ng-non-bindable>
+              <div>{{ someVar }}</div>
+              <input type="range" ng-model="someVar"/>
+          </code>
+      </pre>
+        <div ng-controller="newScope" ng-init="someVar=0">
+            <div>{{ someVar }}</div>
+            <input type="range" ng-model="someVar"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Directive examples</h2>
+    <div>
+      <pre>
+          <code ng-non-bindable>
+              <div ng-click="someVar=0">{{ someVar }}</div>
+              <input type="range" ng-model="someVar"/>
+          </code>
+      </pre>
+        <div ng-controller="newScope" ng-init="someVar=0">
+            <div ng-click="someVar=0">{{ someVar }}</div>
+            <input type="range" ng-model="someVar"/>
+        </div>
+    </div>
+</section>
+
+<style>
+    .result {
+        height: 100px;
+    }
+
+    .color {
+        height: 16px;
+        width: 16px;
+        float: left;
+        margin: 0 1px 1px 0;
+    }
+
+    .clearfix {
+        clear: both;
+    }
+</style>
+
+
+<section ng-controller="newScope" ng-app ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
+    <h2>Colorpicker</h2>
+    <div class="result" style="background-color:rgba({{color.r}},{{color.g}},{{color.b}},{{color.a}});"></div>
+    <div><input type="range" ng-model="color.r" max="255"/>{{color.r}}</div>
+    <div><input type="range" ng-model="color.g" max="255"/>{{color.g}}</div>
+    <div><input type="range" ng-model="color.b" max="255"/>{{color.b}}</div>
+    <div><input type="range" ng-model="color.a" max="1" step="0.01"/>{{color.a}}</div>
+</section>
+
+
+<section ng-controller="newScope" ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
+    <h2>Colorpicker</h2>
+    <pre ng-non-bindable="">
+        <code>
+<div style="background-color:rgba({{r}},{{g}},{{b}},{{a}});"></div>
+<input type="range" ng-model="r" max="255"/>{{r}}
+        </code>
+    </pre>
+</section>
+
+
+<section ng-controller="newScope" ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
+    <h2>Colorpicker</h2>
+    <div class="result" style="background-color:rgba({{color.r}},{{color.g}},{{color.b}},{{color.a}});"></div>
+    <div style="float: right;">
+        <div><input type="range" ng-model="color.r" max="255"/>{{color.r}}</div>
+        <div><input type="range" ng-model="color.g" max="255"/>{{color.g}}</div>
+        <div><input type="range" ng-model="color.b" max="255"/>{{color.b}}</div>
+        <div><input type="range" ng-model="color.a" max="1" step="0.01"/>{{color.a}}</div>
+    </div>
+
+    <div style="float: left; width: 60%">
+    <div ng-repeat="r in steps" class="clearfix">
+        <div ng-repeat="g in steps">
+            <div ng-repeat="b in steps" ng-click="color.r=r;color.g=g;color.b=b"
+                 class="color" style="background-color:rgb({{r}},{{g}},{{b}});"></div>
+        </div>
+    </div>
+    </div>
+    <div class="clearfix"></div>
+    <a href="http://jsfiddle.net/robinboehm/GKUFN/8/">JSFiddle</a>
+</section>
+
+
+
+
+
+<section>
+    <h2>Creating own directives</h2>
+    <img src="images/directives.png"/>
+</section>
+
+<section>
+    <h2>Use existing</h2>
+    <h3>Twitter Bootstrap Components</h3>
+    <img src="images/angular-ui.png"/>
+    <a href="http://angular-ui.github.io/bootstrap/">http://angular-ui.github.io/bootstrap/</a>
+</section>
+
+<section>
+    <h2>Use existing</h2>
+    <h3>Angular-Kendo Wrapper</h3>
+    <img src="images/kendo.png" style="background-color: white"/>
+    <a href="https://github.com/kendo-labs/angular-kendo">https://github.com/kendo-labs/angular-kendo</a>
+</section>
+
+
+
+

@@ -1,0 +1,68 @@
+<!--
+2 Hands
+frame.hands[0].sphereCenter
+-->
+<section ng-init="used=0;know=0;never_heard=0">
+  <h2>Quick-Start</h2>
+
+  <div style="margin-bottom:60px">How many of you ... AngularJS</div>
+
+  <div class="left">
+    <div class="left">
+      <input type="number" ng-model="used"  leap-screen-tap="know=know+1">
+      <span style="vertical-align: middle;">already use</span>
+    </div>
+    <div class="clear"></div>
+
+    <div class="left">
+      <input ng-model="know" type="number" leap-key-tap="know=know+1">
+      <span style="vertical-align: middle;">know</span>
+    </div>
+    <div class="clear"></div>
+
+    <div class="left">
+      <input ng-model="never_heard" type="number">
+      <span style="vertical-align: middle;">never heard about</span>
+    </div>
+  </div>
+
+  <div class="right">
+    <div id="p1" class="poll poll1" style="height: {{used / (used + know + never_heard) * 5}}em;">
+      <span ng-show="used">{{used}}</span>
+    </div>
+    <div class="poll poll2" style="height: {{know / (used + know + never_heard) * 5}}em;">
+      <span ng-show="know">{{know}}</span>
+    </div>
+    <div class="poll poll3" style="height: {{never_heard / (used + know + never_heard) * 5}}em;">
+      <span ng-show="never_heard">{{never_heard}}</span>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="left">
+    <br>
+    <p ng-show="used + know + never_heard">Sum: {{used + know + never_heard}}</p>
+  </div>
+</section>
+
+
+<section>
+    <h2>Simple</h2>
+
+  <pre>
+    <code>
+        &lt;input ng-model="used" leap-screen-tap="used=used+1"/&gt;
+        &lt;input ng-model="know"&gt;
+        &lt;input ng-model="never_heard"&gt;
+
+        Sum: {{used + know + never_heard}&shy;}
+
+        &lt;!-- simplified, 3 times this block --&gt;
+        &lt;div class="poll poll1"
+        style="height: {{used / (used + know + never_heard) * 5}&shy;}em;"&gt;
+        &lt;/div&gt;
+    </code>
+   </pre>
+
+</section>
