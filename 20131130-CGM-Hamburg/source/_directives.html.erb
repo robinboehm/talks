@@ -2,7 +2,7 @@
   <h2>Directives</h2>
 
   <ul>
-    <li>Extend HTML</li>
+    <li>Extend HTML with own elements</li>
     <li>Tags and attributes</li>
     <li>Reusable components</li>
   </ul>
@@ -36,7 +36,7 @@
               <input type="range" ng-model="someVar"/>
           </code>
       </pre>
-        <div ng-controller="newScope" ng-init="someVar=0">
+        <div ng-init="someVar=0">
             <div>{{ someVar }}</div>
             <input type="range" ng-model="someVar"/>
         </div>
@@ -52,7 +52,7 @@
               <input type="range" ng-model="someVar"/>
           </code>
       </pre>
-        <div ng-controller="newScope" ng-init="someVar=0">
+        <div ng-init="someVar=0">
             <div ng-click="someVar=0">{{ someVar }}</div>
             <input type="range" ng-model="someVar"/>
         </div>
@@ -77,7 +77,7 @@
 </style>
 
 
-<section ng-controller="newScope" ng-app ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
+<section ng-app ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
     <h2>Colorpicker</h2>
     <div class="result" style="background-color:rgba({{color.r}},{{color.g}},{{color.b}},{{color.a}});"></div>
     <div><input type="range" ng-model="color.r" max="255"/>{{color.r}}</div>
@@ -87,7 +87,7 @@
 </section>
 
 
-<section ng-controller="newScope" ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
+<section ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
     <h2>Colorpicker</h2>
     <pre ng-non-bindable="">
         <code>
@@ -98,7 +98,7 @@
 </section>
 
 
-<section ng-controller="newScope" ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
+<section ng-init="color.r=0;color.g=0;color.b=0;color.a=0.75;steps=[1,50,100,150,200,255]">
     <h2>Colorpicker</h2>
     <div class="result" style="background-color:rgba({{color.r}},{{color.g}},{{color.b}},{{color.a}});"></div>
     <div style="float: right;">
@@ -121,25 +121,32 @@
 </section>
 
 
-
-
-
 <section>
     <h2>Creating own directives</h2>
     <img src="images/directives.png"/>
 </section>
 
+
+<section>
+    <h2>Creating own directives</h2>
+    <pre ng-non-bindable="">
+        <code>
+            <colorpicker init="rgba(0,0,0,1)"></colorpicker>
+        </code>
+    </pre>
+</section>
+
 <section>
     <h2>Use existing</h2>
     <h3>Twitter Bootstrap Components</h3>
-    <img src="images/angular-ui.png"/>
+    <p><img src="images/angular-ui.png"/></p>
     <a href="http://angular-ui.github.io/bootstrap/">http://angular-ui.github.io/bootstrap/</a>
 </section>
 
 <section>
     <h2>Use existing</h2>
     <h3>Angular-Kendo Wrapper</h3>
-    <img src="images/kendo.png" style="background-color: white"/>
+    <p><img src="images/kendo.png" style="background-color: white"/></p>
     <a href="https://github.com/kendo-labs/angular-kendo">https://github.com/kendo-labs/angular-kendo</a>
 </section>
 

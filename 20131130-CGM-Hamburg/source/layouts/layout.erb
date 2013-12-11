@@ -14,12 +14,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <%= stylesheet_link_tag "reveal.min.css", "theme/default.css", "shame.css" %>
-
+    <link rel="stylesheet" href="css/reveal.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/theme/default.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/shame.css" type="text/css" media="all">
 
   <!-- If the query includes 'print-pdf', use the PDF print sheet -->
   <script>
-    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    document.write( '<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">' );
   </script>
 
   <!--[if lt IE 9]>
@@ -40,18 +41,6 @@
         <%= yield %>
     </div>
 
-
-    <div class="headline right">
-        <a href="https://twitter.com/roobijn" target="_blank">
-            @roobijn
-        </a>
-    </div>
-    <div class="bottomline left">
-        <div>
-            Current Viewers:<span ng-bind="userCount"></span>
-        </div>
-    </div>
-    <div class="headline left">Robin B&ouml;hm</div>
 </div>
 
 
@@ -76,16 +65,12 @@
 
   <%= javascript_include_tag "angular/angular.js",
                              "angular-leap/build/angular-leap.js",
-                             "https://cdn.goinstant.net/v1/platform.min.js",
                              "goangular/dist/goangular.js",
                              "leapjs/leap.min.js",
                              "/lib/js/head.min.js",
                              "reveal.js/js/reveal.min.js",
                              "module.js",
-                             "revealConfig.js",
-                             "syncSlide.js",
-                             "syncScope.js",
-                             "viewers.js"
+                             "revealConfig.js"
   %>
 
   <script>
